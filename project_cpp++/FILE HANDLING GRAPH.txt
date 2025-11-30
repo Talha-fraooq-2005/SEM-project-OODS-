@@ -1,0 +1,32 @@
+┌─────────────────┐
+│ User Input      │
+│ (Plain Text)    │
+└─────────────────┘
+        │
+        ▼
+┌─────────────────┐
+│ SecureFileHandler│
+├─────────────────┤
+│ writeEncryptedData()
+│ readEncryptedData()
+└─────────────────┘
+        │
+        ▼
+┌─────────────────┐
+│ Advanced        │
+│ Encryption      │
+│ Processing      │
+└─────────────────┘
+        │
+        ▼
+┌─────────────────┐
+│ Encrypted File  │
+│ [ENC]data[/ENC] │
+└─────────────────┘
+        │
+        ▼
+┌─────────────────┐
+│ Storage         │
+│ • .dat files    │
+│ • Secure format │
+└─────────────────┘

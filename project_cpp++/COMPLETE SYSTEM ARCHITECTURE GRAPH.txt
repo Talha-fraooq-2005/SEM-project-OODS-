@@ -1,0 +1,36 @@
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     ENHANCED BANKING SYSTEM                            │
+└─────────────────────────────────────────────────────────────────────────┘
+                                │
+                                ▼
+                    ┌─────────────────────┐
+                    │   BankingSystem     │
+                    │   (Main Controller) │
+                    └─────────────────────┘
+                                │
+        ┌───────────────────────┼───────────────────────┐
+        │                       │                       │
+        ▼                       ▼                       ▼
+┌───────────────┐      ┌─────────────────┐      ┌───────────────┐
+│  bankAccount  │      │       ATM       │      │     Admin     │
+│   Management  │      │    Services     │      │     Panel     │
+└───────────────┘      └─────────────────┘      └───────────────┘
+        │                       │                       │
+        ▼                       ▼                       ▼
+┌───────────────┐      ┌─────────────────┐      ┌───────────────┐
+│ - Create Acc  │      │ - ATM Card Login│      │ - View Data   │
+│ - Login       │      │ - Create Card   │      │ - Statistics  │
+│ - Transactions│      │ - Quick Cash    │      │ - Change Pass │
+└───────────────┘      └─────────────────┘      └───────────────┘
+        │                       │                       │
+        ▼                       ▼                       ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                          CORE COMPONENTS                               │
+├───────────────┬─────────────────┬───────────────┬───────────────────────┤
+│ Data Structures│ Security System │ File Handling │ Account Management   │
+├───────────────┼─────────────────┼───────────────┼───────────────────────┤
+│ • Stack       │ • Encryption    │ • SecureFile  │ • AccountNumber      │
+│ • Queue       │ • Password Tools│   Handler     │   Generator          │
+│ • Linked List │ • OTP Generator │ • Encrypted   │ • CustomerLinkedList │
+│ • Templates   │ • Strength Check│   Storage     │ • Transaction History│
+└───────────────┴─────────────────┴───────────────┴───────────────────────┘

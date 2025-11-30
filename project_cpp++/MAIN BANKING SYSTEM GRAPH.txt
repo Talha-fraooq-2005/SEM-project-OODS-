@@ -1,0 +1,16 @@
+┌─────────────────┐
+│ BankingSystem   │
+├─────────────────┤
+│ - showMainMenu()│
+│ - bankAccountMenu()
+│ - atmMenu()     │
+│ - adminPanel()  │
+└─────────────────┘
+        │
+        ├─────────────────┐
+        ▼                     ▼
+┌─────────────┐   ┌─────────────────┐
+│ the compelte   │        │ Core Components │
+│   │ classes             │ initialized here│
+│  to the code  │       └─────────────────┘
+└─────────────┘

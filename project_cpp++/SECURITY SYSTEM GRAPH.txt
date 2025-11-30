@@ -1,0 +1,27 @@
+┌─────────────────┐
+│ Security System │
+├─────────────────┤
+│ Multi-layer     │
+│ Encryption      │
+└─────────────────┘
+        │
+        ├─────────────────┐
+        ▼                 ▼
+┌─────────────┐   ┌─────────────────┐
+│ Advanced    │   │ SecureFile      │
+│ Encryption  │   │ Handler         │
+├─────────────┤   ├─────────────────┤
+│ • encrypt() │   │ • writeEncrypted│
+│ • decrypt() │   │ • readEncrypted │
+│ • isEncrypted│  │ • fileExists()  │
+└─────────────┘   └─────────────────┘
+        │                 │
+        ▼                 ▼
+┌─────────────────────────────────┐
+│        Security Tools           │
+├─────────────────────────────────┤
+│ • Password Generator            │
+│ • Password Strength Checker     │
+│ • OTP Generator                 │
+│ • Encryption Demo               │
+└─────────────────────────────────┘

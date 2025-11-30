@@ -1,0 +1,23 @@
+┌─────────────────┐
+│   bankAccount   │  ←───┐
+├─────────────────┤      │
+│ - Base Class    │      │ Inheritance
+│ - Core Banking  │      │
+└─────────────────┘      │
+                         │
+                ┌─────────────────┐
+                │       ATM       │
+                ├─────────────────┤
+                │ - atmCardNumber │
+                │ - atmPin        │
+                │ - MainMenuATM() │
+                │ - quickCash()   │
+                │ - checkATMCard()│
+                └─────────────────┘
+                         │
+        ┌────────────────┼────────────────┐
+        ▼               ▼                 ▼
+┌─────────────┐ ┌─────────────┐   ┌─────────────┐
+│ ATM Queue   │ │ Card Mgmt   │   │ Transactions│
+│ Simulation  │ │ Functions   │   │ Processing  │
+└─────────────┘ └─────────────┘   └─────────────┘
