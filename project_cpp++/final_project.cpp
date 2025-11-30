@@ -51,13 +51,13 @@ void printHeader(const string& title) {
     clearScreen();
     cout << Cyan();
     cout << "+----------------------------------------------------------+" << endl;
-    cout << "¦";
+    cout << "Â¦";
     int padding = (60 - title.length()) / 2;
     for (int i = 0; i < padding; i++) cout << " ";
     cout << Bold() << title << Reset();
     cout << Cyan();
     for (int i = 0; i < (60 - title.length() - padding); i++) cout << " ";
-    cout << "¦" << endl;
+    cout << "Â¦" << endl;
     cout << "+----------------------------------------------------------+" << endl;
     cout << Reset();
 }
@@ -325,7 +325,7 @@ public:
         cout << Bold() << "Recent Transactions (Last " << min(count, (int)recentTransactions.size()) << "):" << Reset() << endl;
         cout << "+------------------------------------------------------+" << endl;
         for (int i = 0; i < min(count, (int)recentTransactions.size()); i++) {
-            cout << "¦ " << setw(2) << right << i + 1 << ". " << setw(50) << left << recentTransactions[i] << " ¦" << endl;
+            cout << "Â¦ " << setw(2) << right << i + 1 << ". " << setw(50) << left << recentTransactions[i] << " Â¦" << endl;
         }
         cout << "+------------------------------------------------------+" << endl;
     }
@@ -400,7 +400,7 @@ public:
         cout << "+------------------------------------------------------+" << endl;
         int position = 1;
         while (!temp.empty()) {
-            cout << "¦ " << setw(2) << right << position++ << ". " << setw(50) << left << temp.front() << " ¦" << endl;
+            cout << "Â¦ " << setw(2) << right << position++ << ". " << setw(50) << left << temp.front() << " Â¦" << endl;
             temp.pop();
         }
         cout << "+------------------------------------------------------+" << endl;
@@ -481,25 +481,25 @@ public:
 
         cout << Bold() << "All Bank Accounts (" << size << " accounts):" << Reset() << endl;
         cout << "+----------------------------------------------------------------------------------+" << endl;
-        cout << "¦ " << setw(4) << left << "No."
-            << "¦ " << setw(16) << "Account Number"
-            << "¦ " << setw(20) << "Account Holder"
-            << "¦ " << setw(16) << "Email"
-            << "¦ " << setw(12) << "Balance" << " ¦" << endl;
-        cout << "+------+------------------+----------------------+------------------+--------------¦" << endl;
+        cout << "Â¦ " << setw(4) << left << "No."
+            << "Â¦ " << setw(16) << "Account Number"
+            << "Â¦ " << setw(20) << "Account Holder"
+            << "Â¦ " << setw(16) << "Email"
+            << "Â¦ " << setw(12) << "Balance" << " Â¦" << endl;
+        cout << "+------+------------------+----------------------+------------------+--------------Â¦" << endl;
 
         Node* current = head;
         int count = 1;
         while (current) {
-            cout << "¦ " << setw(4) << left << count++
-                << "¦ " << setw(16) << current->accountNumber
-                << "¦ " << setw(20) << (current->accountHolderName.length() > 18 ?
+            cout << "Â¦ " << setw(4) << left << count++
+                << "Â¦ " << setw(16) << current->accountNumber
+                << "Â¦ " << setw(20) << (current->accountHolderName.length() > 18 ?
                     current->accountHolderName.substr(0, 15) + "..." :
                     current->accountHolderName)
-                << "¦ " << setw(16) << (current->email.length() > 14 ?
+                << "Â¦ " << setw(16) << (current->email.length() > 14 ?
                     current->email.substr(0, 11) + "..." :
                     current->email)
-                << "¦ $" << setw(10) << fixed << setprecision(2) << current->balance << " ¦" << endl;
+                << "Â¦ $" << setw(10) << fixed << setprecision(2) << current->balance << " Â¦" << endl;
             current = current->next;
         }
         cout << "+----------------------------------------------------------------------------------+" << endl;
@@ -736,20 +736,20 @@ public:
         cout << "+--------------------------------------------------------------------+" << endl;
 
         for (const string& filename : accountFiles) {
-            cout << "¦ File: " << setw(55) << left << filename << " ¦" << endl;
+            cout << "Â¦ File: " << setw(55) << left << filename << " Â¦" << endl;
 
             SecureFileHandler fileHandler(filename);
             if (fileHandler.fileExists()) {
                 vector<string> accountData = fileHandler.readEncryptedData();
 
-                cout << "¦ +--------------------------------------------------------------+ ¦" << endl;
+                cout << "Â¦ +--------------------------------------------------------------+ Â¦" << endl;
                 for (const string& line : accountData) {
                     string displayLine = line.length() > 58 ? line.substr(0, 55) + "..." : line;
-                    cout << "¦ ¦ " << setw(58) << left << displayLine << " ¦ ¦" << endl;
+                    cout << "Â¦ Â¦ " << setw(58) << left << displayLine << " Â¦ Â¦" << endl;
                 }
-                cout << "¦ +--------------------------------------------------------------+ ¦" << endl;
+                cout << "Â¦ +--------------------------------------------------------------+ Â¦" << endl;
             }
-            cout << "+--------------------------------------------------------------------¦" << endl;
+            cout << "+--------------------------------------------------------------------Â¦" << endl;
         }
         cout << "+--------------------------------------------------------------------+" << endl;
     }
@@ -773,7 +773,7 @@ public:
                 vector<string> accountData = fileHandler.readEncryptedData();
 
                 for (const string& line : accountData) {
-                    cout << "¦ " << setw(66) << left << line << " ¦" << endl;
+                    cout << "Â¦ " << setw(66) << left << line << " Â¦" << endl;
                 }
             }
             cout << "+--------------------------------------------------------------------+" << endl;
@@ -802,11 +802,11 @@ public:
         }
 
         cout << "+--------------------------------------------------------------------+" << endl;
-        cout << "¦ Total Accounts in System  : " << setw(42) << left << totalAccounts << " ¦" << endl;
-        cout << "¦ Total Balance Across All Accounts : $" << setw(36) << left << fixed << setprecision(2) << totalBalance << " ¦" << endl;
-        cout << "¦ Account Data Files        : " << setw(42) << left << accountFiles.size() << " ¦" << endl;
-        cout << "¦ System Files Encrypted    : " << setw(42) << left << "Yes" << " ¦" << endl;
-        cout << "¦ Encryption Level          : " << setw(42) << left << "Advanced Multi-layer" << " ¦" << endl;
+        cout << "Â¦ Total Accounts in System  : " << setw(42) << left << totalAccounts << " Â¦" << endl;
+        cout << "Â¦ Total Balance Across All Accounts : $" << setw(36) << left << fixed << setprecision(2) << totalBalance << " Â¦" << endl;
+        cout << "Â¦ Account Data Files        : " << setw(42) << left << accountFiles.size() << " Â¦" << endl;
+        cout << "Â¦ System Files Encrypted    : " << setw(42) << left << "Yes" << " Â¦" << endl;
+        cout << "Â¦ Encryption Level          : " << setw(42) << left << "Advanced Multi-layer" << " Â¦" << endl;
         cout << "+--------------------------------------------------------------------+" << endl;
     }
 
@@ -1158,9 +1158,9 @@ void bankAccount::createAccount() {
 
     printSuccess("Account Created Successfully!");
     cout << "+------------------------------------------------------+" << endl;
-    cout << "¦  Account Number   : " << setw(35) << left << accountNumber << " ¦" << endl;
-    cout << "¦  Account Holder   : " << setw(35) << left << accountHolderName << " ¦" << endl;
-    cout << "¦  Initial Balance  : $" << setw(33) << left << fixed << setprecision(2) << balance << " ¦" << endl;
+    cout << "Â¦  Account Number   : " << setw(35) << left << accountNumber << " Â¦" << endl;
+    cout << "Â¦  Account Holder   : " << setw(35) << left << accountHolderName << " Â¦" << endl;
+    cout << "Â¦  Initial Balance  : $" << setw(33) << left << fixed << setprecision(2) << balance << " Â¦" << endl;
     cout << "+------------------------------------------------------+" << endl;
 
     pauseScreen();
@@ -1261,15 +1261,15 @@ void bankAccount::accountDetails() {
     printHeader("ACCOUNT DETAILS");
 
     cout << "+------------------------------------------------------+" << endl;
-    cout << "¦                   ACCOUNT INFORMATION                ¦" << endl;
-    cout << "+------------------------------------------------------¦" << endl;
-    cout << "¦  Bank Name          : " << setw(35) << left << bankName << " ¦" << endl;
-    cout << "¦  Account Holder     : " << setw(35) << left << accountHolderName << " ¦" << endl;
-    cout << "¦  Account Number     : " << setw(35) << left << accountNumber << " ¦" << endl;
-    cout << "¦  Email Address      : " << setw(35) << left << email << " ¦" << endl;
-    cout << "¦  Phone Number       : " << setw(35) << left << phoneNumber << " ¦" << endl;
-    cout << "¦  Addhar Number      : " << setw(35) << left << addharNumber << " ¦" << endl;
-    cout << "¦  Current Balance    : $" << setw(33) << left << fixed << setprecision(2) << balance << " ¦" << endl;
+    cout << "Â¦                   ACCOUNT INFORMATION                Â¦" << endl;
+    cout << "+------------------------------------------------------Â¦" << endl;
+    cout << "Â¦  Bank Name          : " << setw(35) << left << bankName << " Â¦" << endl;
+    cout << "Â¦  Account Holder     : " << setw(35) << left << accountHolderName << " Â¦" << endl;
+    cout << "Â¦  Account Number     : " << setw(35) << left << accountNumber << " Â¦" << endl;
+    cout << "Â¦  Email Address      : " << setw(35) << left << email << " Â¦" << endl;
+    cout << "Â¦  Phone Number       : " << setw(35) << left << phoneNumber << " Â¦" << endl;
+    cout << "Â¦  Addhar Number      : " << setw(35) << left << addharNumber << " Â¦" << endl;
+    cout << "Â¦  Current Balance    : $" << setw(33) << left << fixed << setprecision(2) << balance << " Â¦" << endl;
     cout << "+------------------------------------------------------+" << endl;
 }
 
@@ -1513,11 +1513,11 @@ void ATM::createATMCard() {
     if (atmFile.writeEncryptedData(cardData)) {
         printSuccess("ATM Card Created Successfully!");
         cout << "+------------------------------------------------------+" << endl;
-        cout << "¦  ATM Card Number : " << setw(35) << left << atmCardNumber << " ¦" << endl;
-        cout << "¦  PIN             : " << setw(35) << left << atmPin << " ¦" << endl;
-        cout << "¦  Expiry Date     : " << setw(35) << left << "12/27" << " ¦" << endl;
-        cout << "¦  CVV             : " << setw(35) << left << cardData[3] << " ¦" << endl;
-        cout << "¦  Linked Account  : " << setw(35) << left << AccountNumber << " ¦" << endl;
+        cout << "Â¦  ATM Card Number : " << setw(35) << left << atmCardNumber << " Â¦" << endl;
+        cout << "Â¦  PIN             : " << setw(35) << left << atmPin << " Â¦" << endl;
+        cout << "Â¦  Expiry Date     : " << setw(35) << left << "12/27" << " Â¦" << endl;
+        cout << "Â¦  CVV             : " << setw(35) << left << cardData[3] << " Â¦" << endl;
+        cout << "Â¦  Linked Account  : " << setw(35) << left << AccountNumber << " Â¦" << endl;
         cout << "+------------------------------------------------------+" << endl;
         printWarning("Keep your PIN and CVV confidential!");
     }
@@ -1559,10 +1559,10 @@ public:
         printHeader("QUEUE DEMO - ATM SERVICE");
 
         ATMQueue<string> demoQueue;
-        demoQueue.enqueue("Customer: John Doe");
-        demoQueue.enqueue("Customer: Jane Smith");
-        demoQueue.enqueue("Customer: Bob Johnson");
-        demoQueue.enqueue("Customer: Alice Brown");
+        demoQueue.enqueue("Customer: Talha Farooq");
+        demoQueue.enqueue("Customer: Ali");
+        demoQueue.enqueue("Customer: areeb Ahmed");
+        demoQueue.enqueue("Customer: zain salam");
 
         demoQueue.displayQueue();
 
@@ -1687,11 +1687,11 @@ private:
         displayPasswordStrength(password);
 
         cout << "\nDetailed Analysis:" << endl;
-        cout << "• Length: " << password.length() << " characters" << endl;
-        cout << "• Contains uppercase: " << (any_of(password.begin(), password.end(), ::isupper) ? "Yes" : "No") << endl;
-        cout << "• Contains lowercase: " << (any_of(password.begin(), password.end(), ::islower) ? "Yes" : "No") << endl;
-        cout << "• Contains digits: " << (any_of(password.begin(), password.end(), ::isdigit) ? "Yes" : "No") << endl;
-        cout << "• Contains symbols: " << (any_of(password.begin(), password.end(), [](char c) {
+        cout << "Â• Length: " << password.length() << " characters" << endl;
+        cout << "Â• Contains uppercase: " << (any_of(password.begin(), password.end(), ::isupper) ? "Yes" : "No") << endl;
+        cout << "Â• Contains lowercase: " << (any_of(password.begin(), password.end(), ::islower) ? "Yes" : "No") << endl;
+        cout << "Â• Contains digits: " << (any_of(password.begin(), password.end(), ::isdigit) ? "Yes" : "No") << endl;
+        cout << "Â• Contains symbols: " << (any_of(password.begin(), password.end(), [](char c) {
             return !isalnum(c); }) ? "Yes" : "No") << endl;
     }
 
@@ -1956,29 +1956,29 @@ private:
         printHeader("SYSTEM INFORMATION");
 
         cout << "+------------------------------------------------------+" << endl;
-        cout << "¦                 SYSTEM OVERVIEW                     ¦" << endl;
-        cout << "+------------------------------------------------------¦" << endl;
-        cout << "¦  Bank Name         :  Bank of Talha Farooq           ¦" << endl;
-        cout << "¦  System Version    : 3.2 Secure File System        ¦" << endl;
-        cout << "¦  Developed By      : Talha Codes                    ¦" << endl;
-        cout << "¦  Total Accounts    : " << setw(30) << left << allAccounts.getSize() << " ¦" << endl;
-        cout << "¦  File System       : Encrypted Data Storage        ¦" << endl;
-        cout << "¦  Account Numbers   : Unique & Sequential           ¦" << endl;
-        cout << "¦  Security Features : Multi-layer Encryption        ¦" << endl;
-        cout << "¦  Admin Access      : Secure Authentication         ¦" << endl;
+        cout << "Â¦                 SYSTEM OVERVIEW                     Â¦" << endl;
+        cout << "+------------------------------------------------------Â¦" << endl;
+        cout << "Â¦  Bank Name         :  Bank of Talha Farooq           Â¦" << endl;
+        cout << "Â¦  System Version    : 3.2 Secure File System        Â¦" << endl;
+        cout << "Â¦  Developed By      : Talha Codes                    Â¦" << endl;
+        cout << "Â¦  Total Accounts    : " << setw(30) << left << allAccounts.getSize() << " Â¦" << endl;
+        cout << "Â¦  File System       : Encrypted Data Storage        Â¦" << endl;
+        cout << "Â¦  Account Numbers   : Unique & Sequential           Â¦" << endl;
+        cout << "Â¦  Security Features : Multi-layer Encryption        Â¦" << endl;
+        cout << "Â¦  Admin Access      : Secure Authentication         Â¦" << endl;
         cout << "+------------------------------------------------------+" << endl;
 
         cout << "\n+------------------------------------------------------+" << endl;
-        cout << "¦                 SECURITY FEATURES                    ¦" << endl;
-        cout << "+------------------------------------------------------¦" << endl;
-        cout << "¦    Advanced Multi-layer Encryption                  ¦" << endl;
-        cout << "¦    Secure File Handling                             ¦" << endl;
-        cout << "¦    Unique Account Number Generation                 ¦" << endl;
-        cout << "¦    Encrypted Transaction History                    ¦" << endl;
-        cout << "¦    Admin-Only Data Access                           ¦" << endl;
-        cout << "¦    Password Strength Enforcement                    ¦" << endl;
-        cout << "¦    Secure ATM Card Management                       ¦" << endl;
-        cout << "¦    Real-time Data Encryption/Decryption             ¦" << endl;
+        cout << "Â¦                 SECURITY FEATURES                    Â¦" << endl;
+        cout << "+------------------------------------------------------Â¦" << endl;
+        cout << "Â¦    Advanced Multi-layer Encryption                  Â¦" << endl;
+        cout << "Â¦    Secure File Handling                             Â¦" << endl;
+        cout << "Â¦    Unique Account Number Generation                 Â¦" << endl;
+        cout << "Â¦    Encrypted Transaction History                    Â¦" << endl;
+        cout << "Â¦    Admin-Only Data Access                           Â¦" << endl;
+        cout << "Â¦    Password Strength Enforcement                    Â¦" << endl;
+        cout << "Â¦    Secure ATM Card Management                       Â¦" << endl;
+        cout << "Â¦    Real-time Data Encryption/Decryption             Â¦" << endl;
         cout << "+------------------------------------------------------+" << endl;
 
         pauseScreen();
@@ -1991,11 +1991,11 @@ int main() {
     clearScreen();
     cout << Cyan();
     cout << "+----------------------------------------------------------+" << endl;
-    cout << "¦                                                          ¦" << endl;
-    cout << "¦          WELCOME TO SECURE BANKING SYSTEM                ¦" << endl;
-    cout << "¦                                                          ¦" << endl;
-    cout << "¦         Advanced File Handling & Encryption              ¦" << endl;
-    cout << "¦                                                          ¦" << endl;
+    cout << "Â¦                                                          Â¦" << endl;
+    cout << "Â¦          WELCOME TO SECURE BANKING SYSTEM                Â¦" << endl;
+    cout << "Â¦                                                          Â¦" << endl;
+    cout << "Â¦         Advanced File Handling & Encryption              Â¦" << endl;
+    cout << "Â¦                                                          Â¦" << endl;
     cout << "+----------------------------------------------------------+" << endl;
     cout << Reset();
 
@@ -2006,3 +2006,4 @@ int main() {
 
     return 0;
 }
+
